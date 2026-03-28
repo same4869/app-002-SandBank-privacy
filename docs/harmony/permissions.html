@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SandBank Harmony 权限说明</title>
+  <meta name="description" content="SandBank Harmony 权限说明页面。">
+  <link rel="stylesheet" href="./legal.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow">权限说明</span>
+      <h1>SandBank Harmony 权限使用说明</h1>
+      <p>为保证当前版本的本地提醒与交互反馈能力，应用会在有限范围内使用系统权限。以下为当前版本实际使用的权限说明。</p>
+      <div class="hero-meta">
+        <span class="chip">发布主体：xunwang</span>
+        <span class="chip">最后更新：2026-03-28</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>`ohos.permission.PUBLISH_AGENT_REMINDER`</h2>
+      <h3>用途</h3>
+      <p>用于创建和取消用户主动开启的每日提醒通知。</p>
+
+      <h3>触发方式</h3>
+      <p>仅在用户进入设置页并主动保存提醒时间时使用。</p>
+
+      <h3>关闭后的影响</h3>
+      <p>关闭后，用户仍可正常使用目标管理、计划查看、流水记录和本地导入导出能力，但无法收到每日提醒通知。</p>
+    </section>
+
+    <section class="section">
+      <h2>`ohos.permission.VIBRATE`</h2>
+      <h3>用途</h3>
+      <p>用于按钮点击、仪式动作或关键确认场景中的轻量震动反馈。</p>
+
+      <h3>触发方式</h3>
+      <p>仅在用户触发相应交互时调用。</p>
+
+      <h3>关闭后的影响</h3>
+      <p>关闭后不会影响核心功能，仅会失去部分交互反馈体验。</p>
+    </section>
+
+    <section class="section">
+      <h2>当前版本不涉及的权限方向</h2>
+      <div class="list-box">
+        <ul>
+          <li>不涉及内购或会员相关权限。</li>
+          <li>不涉及云同步、iCloud 或远程账户体系。</li>
+          <li>不涉及小组件、广告画像或跨平台跟踪能力。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>补充说明</h2>
+      <p>应用的本地 JSON 导入导出能力基于用户主动触发的系统文件选择流程完成，不会在未经用户同意的情况下后台读取或上传本地数据。</p>
+      <a class="back-link" href="./index.html">← 返回法律与隐私说明首页</a>
+    </section>
+  </main>
+</body>
+</html>

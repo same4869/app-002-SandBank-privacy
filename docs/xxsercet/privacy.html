@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>隐私政策 — 密语匣子</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-600: #7C3AED;
+      --purple-700: #6D28D9;
+      --purple-50:  #F5F3FF;
+      --purple-100: #EDE9FE;
+      --purple-200: #DDD6FE;
+      --text-primary:   #1E1B4B;
+      --text-secondary: #6B7280;
+      --border:         #E5E7EB;
+      --bg:             #F9FAFB;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #7C3AED 0%, #4338CA 100%);
+      color: #fff;
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 13px;
+      opacity: 0.75;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── Intro banner ── */
+    .intro {
+      background: var(--purple-50);
+      border-left: 4px solid var(--purple-600);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 32px 0 8px;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    .intro strong { color: var(--purple-700); }
+
+    /* ── TOC ── */
+    nav.toc {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 20px 0 32px;
+    }
+
+    nav.toc h2 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    nav.toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+
+    nav.toc ol li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    nav.toc ol li::before {
+      content: counter(toc) ". ";
+      color: var(--purple-600);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    nav.toc a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .15s;
+    }
+
+    nav.toc a:hover { color: var(--purple-600); }
+
+    /* ── Sections ── */
+    article section {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      margin-bottom: 16px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .icon-purple { background: var(--purple-100); }
+    .icon-green  { background: #ECFDF5; }
+    .icon-blue   { background: #EFF6FF; }
+    .icon-amber  { background: #FFFBEB; }
+    .icon-rose   { background: #FFF1F2; }
+
+    .section-header h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .section-header .num {
+      font-size: 12px;
+      color: var(--purple-600);
+      font-weight: 600;
+      background: var(--purple-100);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    section p {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+
+    section p:last-child { margin-bottom: 0; }
+
+    section ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    section ul li {
+      font-size: 14px;
+      color: #374151;
+      padding: 6px 0 6px 20px;
+      position: relative;
+      border-bottom: 1px solid #F3F4F6;
+    }
+
+    section ul li:last-child { border-bottom: none; }
+
+    section ul li::before {
+      content: "◈";
+      position: absolute;
+      left: 0;
+      color: var(--purple-600);
+      font-size: 11px;
+      top: 8px;
+    }
+
+    .highlight-box {
+      background: var(--purple-50);
+      border: 1px solid var(--purple-200);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--purple-700);
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    .highlight-box.green {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+      color: #166534;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--bg);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-top: 12px;
+    }
+
+    .contact-row .label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      min-width: 36px;
+    }
+
+    .contact-row a {
+      font-size: 14px;
+      color: var(--purple-700);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 2;
+    }
+
+    footer strong { color: var(--text-primary); }
+
+    .updated-badge {
+      display: inline-block;
+      background: var(--purple-100);
+      color: var(--purple-700);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 48px 20px 40px; }
+      header h1 { font-size: 22px; }
+      article section { padding: 20px 18px; }
+      nav.toc { padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">密</div>
+  <h1>密语匣子 隐私政策</h1>
+  <p>Privacy Policy · HarmonyOS 版</p>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    欢迎使用 <strong>密语匣子</strong>。我们高度重视您的个人隐私与数据安全。本政策说明我们如何收集、使用和保护您的信息，请在使用前仔细阅读。
+  </div>
+
+  <nav class="toc">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#s1">信息收集</a></li>
+      <li><a href="#s2">数据存储</a></li>
+      <li><a href="#s3">数据安全</a></li>
+      <li><a href="#s4">数据删除</a></li>
+      <li><a href="#s5">儿童隐私</a></li>
+      <li><a href="#s6">政策变更</a></li>
+      <li><a href="#s7">联系我们</a></li>
+    </ol>
+  </nav>
+
+  <article>
+
+    <!-- 1 信息收集 -->
+    <section id="s1">
+      <div class="section-header">
+        <div class="section-icon icon-purple">🔍</div>
+        <div>
+          <div class="num">01</div>
+          <h2>信息收集</h2>
+        </div>
+      </div>
+      <p>密语匣子是一款<strong>完全离线</strong>的端到端加密应用，我们<strong>不收集任何个人信息</strong>。具体而言：</p>
+      <ul>
+        <li>不收集您的姓名、手机号、邮箱等身份信息</li>
+        <li>不收集您输入或加密的任何文本内容</li>
+        <li>不收集设备唯一标识符或位置信息</li>
+        <li>不接入任何第三方数据分析或广告 SDK</li>
+        <li>不请求非必要系统权限</li>
+      </ul>
+      <div class="highlight-box">
+        本应用无需网络连接即可完整运行，数据始终保留在您的设备本地，不会传输至任何服务器。
+      </div>
+    </section>
+
+    <!-- 2 数据存储 -->
+    <section id="s2">
+      <div class="section-header">
+        <div class="section-icon icon-green">💾</div>
+        <div>
+          <div class="num">02</div>
+          <h2>数据存储</h2>
+        </div>
+      </div>
+      <p>您在应用内创建的所有数据，包括自定义字谱、加解密记录及应用设置，均以以下方式存储于本地：</p>
+      <ul>
+        <li>数据仅保存在您设备的应用沙盒目录中</li>
+        <li>加密记录在写入前已完成端到端加密处理</li>
+        <li>自定义密钥（口令）不以任何形式持久化存储</li>
+        <li>应用设置通过系统 Preferences API 本地保存</li>
+      </ul>
+      <div class="highlight-box green">
+        我们没有服务器、没有云同步、没有账户体系。您的数据 100% 属于您自己。
+      </div>
+    </section>
+
+    <!-- 3 数据安全 -->
+    <section id="s3">
+      <div class="section-header">
+        <div class="section-icon icon-blue">🔐</div>
+        <div>
+          <div class="num">03</div>
+          <h2>数据安全</h2>
+        </div>
+      </div>
+      <p>密语匣子采用业界标准的加密算法保护您的数据安全：</p>
+      <ul>
+        <li><strong>AES-GCM</strong>：对称加密算法，确保密文不可篡改</li>
+        <li><strong>PBKDF2</strong>：密钥派生函数，将用户口令转换为强加密密钥</li>
+        <li><strong>自定义字谱映射</strong>：在密文字符集层面增加额外混淆</li>
+        <li>加密过程全程在本地完成，密钥不离开设备</li>
+      </ul>
+      <p>即使设备丢失，无口令者也无法还原您的原始内容。</p>
+    </section>
+
+    <!-- 4 数据删除 -->
+    <section id="s4">
+      <div class="section-header">
+        <div class="section-icon icon-amber">🗑️</div>
+        <div>
+          <div class="num">04</div>
+          <h2>数据删除</h2>
+        </div>
+      </div>
+      <p>您对数据拥有完全的控制权：</p>
+      <ul>
+        <li>可在「记录」页面逐条删除加解密记录</li>
+        <li>可在「字谱」页面删除自定义字谱</li>
+        <li>可在「设置」页面一键清除所有本地数据</li>
+        <li>卸载应用后，设备上的所有相关数据将被系统自动清除</li>
+      </ul>
+      <p>由于我们不持有您的任何数据副本，数据删除操作立即生效且<strong>不可恢复</strong>，请谨慎操作。</p>
+    </section>
+
+    <!-- 5 儿童隐私 -->
+    <section id="s5">
+      <div class="section-header">
+        <div class="section-icon icon-rose">👶</div>
+        <div>
+          <div class="num">05</div>
+          <h2>儿童隐私</h2>
+        </div>
+      </div>
+      <p>本应用不面向 14 周岁以下儿童。我们不会故意收集未成年人的任何个人信息。若您发现未成年人在未经监护人同意的情况下使用本应用，请通过下方联系方式告知我们。</p>
+    </section>
+
+    <!-- 6 政策变更 -->
+    <section id="s6">
+      <div class="section-header">
+        <div class="section-icon icon-purple">📄</div>
+        <div>
+          <div class="num">06</div>
+          <h2>政策变更</h2>
+        </div>
+      </div>
+      <p>如本隐私政策发生重大变更，我们将通过应用内通知或在本页面更新版本号的方式告知您。继续使用本应用即表示您接受更新后的政策内容。</p>
+      <p>我们建议您定期查阅本页面以了解最新隐私保护措施。</p>
+    </section>
+
+    <!-- 7 联系我们 -->
+    <section id="s7">
+      <div class="section-header">
+        <div class="section-icon icon-green">✉️</div>
+        <div>
+          <div class="num">07</div>
+          <h2>联系我们</h2>
+        </div>
+      </div>
+      <p>如您对本隐私政策有任何疑问、意见或建议，欢迎通过以下方式联系开发者：</p>
+      <div class="contact-row">
+        <span class="label">邮箱</span>
+        <a href="mailto:119123059@qq.com">119123059@qq.com</a>
+      </div>
+      <p style="margin-top: 14px; font-size: 13px; color: #6B7280;">我们将在收到邮件后 7 个工作日内回复您。</p>
+    </section>
+
+  </article>
+
+  <footer>
+    <div class="updated-badge">最后更新：2026 年 4 月</div>
+    <br />
+    <strong>密语匣子</strong><br />
+    开发者：SameX<br />
+    © 2026 密语匣子 · 保留所有权利
+  </footer>
+
+</div>
+
+</body>
+</html>
